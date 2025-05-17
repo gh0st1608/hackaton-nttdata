@@ -1,0 +1,19 @@
+type: object
+description: Entidad permite acceder al usuario
+properties:
+  Data:
+    type: object
+    properties:
+      Auth:
+        required:
+          - email
+          - password
+        type: object
+        properties:
+          email:
+            $ref: ../attributes/auths/email.yaml
+          password:
+            $ref: ../attributes/auths/password.yaml
+
+
+          

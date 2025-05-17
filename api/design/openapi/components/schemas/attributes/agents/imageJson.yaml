@@ -1,0 +1,7 @@
+type: object
+properties:
+  payload:
+    type: string
+    format: json
+    description: String que contiene un objeto JSON
+    example: '{"nombre": "Juan", "edad": 30}'

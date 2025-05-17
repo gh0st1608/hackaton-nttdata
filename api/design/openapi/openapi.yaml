@@ -1,0 +1,66 @@
+openapi: 3.0.3
+info:
+  version: 1.0.0
+  title: API de Canal Hackaton NTT-DATA
+  description: >
+    API de canal, donde se define los alcances recursos.
+      Recuros:
+
+        - Product
+        - Order
+        - Agent
+        - Auth
+
+  contact:
+    name: Erick Galindo Aguilar
+    email: erickmga123@gmail.com
+    url: 'https://storage.googleapis.com/api-hackaton-design-dev/api-hackaton-dev.html'
+    x-role: API Designer
+  x-catalog:
+    x-id-proxy: api-canal-hackaton
+    x-id-product: internal-product-hackaton-dev
+    x-id-catalog: api-canal-hackaton
+servers:
+  - url: 'https://api-dev.cuidaco.pe/api-canal-hackaton/v1'
+    description: Servidor de ambiente Desarrollo
+
+tags:
+  - name: Products
+    description: >
+      Agrupa los servicios de gestión sobre el recurso de: Producto
+
+  - name: Orders
+    description: >
+      Agrupa los servicios de gestión sobre el recurso de: Orders
+
+  - name: Agents
+    description: >
+      Agrupa los servicios de gestión sobre el recurso de: Agents
+  
+  - name: Auths
+    description: >
+      Agrupa los servicios de gestión sobre el recurso de: Agents
+
+paths: 
+  '/auth/login':
+    $ref: 'paths/Auth@login.yaml'
+  '/products/register':
+    $ref: 'paths/Product@create.yaml'
+  '/products/{id}':
+    $ref: 'paths/Product@upd@del@get.yaml'
+  '/orders/register':
+    $ref: 'paths/Order@create.yaml'
+  '/orders/{id}':
+    $ref: 'paths/Order@upd@del@get.yaml'
+  '/agents/transform':
+    $ref: 'paths/Agent@transform.yaml'
+  #'/agents/predict':
+  #  $ref: 'paths/Agent@predict.yaml'
+
+components:
+  securitySchemes:
+    api_key:
+      description: Código único del Cliente.
+      type: "apiKey"
+      name: "x-api-key"
+      in: "header"

@@ -1,0 +1,32 @@
+steps:
+  - name: 'node:slim'
+    entrypoint: 'npm'
+    args: ['install']
+    dir: 'api/design'
+
+  - name: 'node:slim'
+    entrypoint: 'npm'
+    args: ['run', 'build']
+    dir: 'api/design'
+  
+  - name: 'node:slim'
+    entrypoint: 'npm'
+    args: ['run', 'build-html']
+    dir: 'api/design'
+
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        gsutil cp api/design/dist/*.yaml gs://near-hackaton-design-dev
+        gsutil cp api/design/dist/*.html gs://near-hackaton-design-dev
+        gsutil acl ch -u AllUsers:R gs://near-hackaton-design-dev/near-hackaton-api-dev.html
+
+
+timeout: '600s'
+serviceAccount: 'oval-crawler-444615-k3@appspot.gserviceaccount.com'
+logsBucket: 'gs://near-hackaton-design-dev/logs'
+options:
+  logging: GCS_ONLY
+  automapSubstitutions: true

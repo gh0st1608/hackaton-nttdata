@@ -1,0 +1,11 @@
+type: object
+description: Devuelve un objeto json
+properties:
+  Data:
+    type: object
+    properties:
+      Agent:
+        type: object
+        properties:
+          imageJson:
+            $ref: ../attributes/agents/imageJson.yaml

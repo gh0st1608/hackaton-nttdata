@@ -1,0 +1,13 @@
+required: true
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/model_request/Login.yaml
+    examples:
+      Caso-Prueba-01:
+        summary: Caso Prueba 01
+        value:
+          Data:
+            Auth:
+              email: 'erickmga123@gmail.com'
+              password: 'Er1ck123!'

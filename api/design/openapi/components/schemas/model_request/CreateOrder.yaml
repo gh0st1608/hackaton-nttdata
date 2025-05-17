@@ -1,0 +1,25 @@
+type: object
+description: Entidad permite crear una orden
+properties:
+  Data:
+    type: object
+    properties:
+      Order:
+        required:
+          - userId
+          - boletaId
+          - items
+          - amount
+        type: object
+        properties:
+          userId:
+            $ref: ../attributes/mongoId.yaml
+          boletaId:
+            $ref: ../attributes/mongoId.yaml
+          items:
+            $ref: ../attributes/orders/item.yaml
+          amount:
+            $ref: ../attributes/products/price.yaml
+
+
+          

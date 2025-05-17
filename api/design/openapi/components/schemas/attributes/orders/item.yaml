@@ -1,0 +1,20 @@
+type: array
+items:
+  type: object
+  properties:
+    sku:
+      type: string
+      description: codigo de producto en inventario
+      example: OREO123
+    name:
+      type: string
+      description: nombre de producto
+      example: Oreo Pack
+    quantity:
+      type: integer
+      description: cantidad de producto
+      example: 2
+    price:
+      type: number
+      description: precio de producto
+      example: 10.00

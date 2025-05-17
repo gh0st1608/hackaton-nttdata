@@ -1,0 +1,13 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+      "outDir": "./dist",
+      "rootDir": "./src",
+      "target": "es2020",
+      "esModuleInterop": true,
+      "tsBuildInfoFile": "./dist/tsconfig.build.tsbuildinfo"
+    },
+    "exclude": ["node_modules", "test", "dist", "**/*spec.ts", "src/main.ts"],
+    "include": ["src/function.ts"]
+}
+  

@@ -1,0 +1,8 @@
+description: Entidad que representa a una imagen a procesar por el agente
+type: object
+properties:
+  image:
+    type: string
+    format: base64
+    description: Imagen o PDF de la boleta (base64)
+    example: iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=

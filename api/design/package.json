@@ -1,0 +1,19 @@
+{
+    "name": "api-hackaton-nttdata",
+    "version": "1.0.0",
+    "dependencies": {
+        "@redocly/openapi-cli": "0.12.16",
+        "aapi-ne-diagnostic": "file:"
+    },
+    "private": true,
+    "scripts": {
+        "start": "openapi preview-docs --port 8084 openapi/openapi.yaml",
+        "build": "openapi bundle -o dist/api-hackaton-dev.yaml",
+        "build-html": "redoc-cli bundle ./dist/api-hackaton-dev.yaml --output ./dist/api-hackaton-dev.html -t ./docs/index.html",
+        "test": "openapi validate"
+    },
+    "devDependencies": {
+        "@redocly/openapi-cli": "0.12.7",
+        "redoc-cli": "^0.13.21"
+    }
+}

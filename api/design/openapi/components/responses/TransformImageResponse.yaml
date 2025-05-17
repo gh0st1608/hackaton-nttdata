@@ -1,0 +1,14 @@
+description: Retorna un json
+content:
+  application/json:
+    schema:
+      allOf:
+        - $ref: ../schemas/model_response/StandardResponse.yaml
+        - $ref: ../schemas/model_response/TransformImageRes.yaml
+    examples:
+      Caso-Prueba-01:
+        summary: Obtener una boleta en json
+        value:
+          Data:
+            Agent:
+              imageJson: { "series": "F001", "number": "12345678", "emissionDate": "2025-05-17", "documentType": "01", "documentNumber": "12345678" }

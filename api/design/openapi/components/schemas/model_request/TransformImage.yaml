@@ -1,0 +1,18 @@
+type: object
+description: Entidad permite tranformar una imagen
+properties:
+  Data:
+    type: object
+    properties:
+      Agent:
+        required:
+          - target
+        type: object
+        properties:
+          target:
+            $ref: ../attributes/agents/target.yaml
+          outputPath:
+            $ref: ../attributes/agents/outputPath.yaml
+
+
+          

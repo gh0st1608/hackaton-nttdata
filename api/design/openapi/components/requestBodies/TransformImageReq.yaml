@@ -1,0 +1,14 @@
+description: Entidad para crear un producto
+required: true
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/model_request/TransformImage.yaml
+    examples:
+      Caso-Prueba-01:
+        summary: Caso Prueba 01
+        value:
+          Data:
+            Agent:
+              target: 'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNgYAAAAAMAASsJTYQAAAAASUVORK5CYII='
+              outputPath: 'https://storage.cloud.google.com/near-hackaton-design-dev/output'

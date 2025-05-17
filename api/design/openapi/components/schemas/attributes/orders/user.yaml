@@ -1,0 +1,37 @@
+description: Entidad que representa a un usuario de la plataforma
+type: object
+properties:
+  userId:
+    type: string
+    description: Identificador único del usuario (UUID, DNI, etc.)
+    example: user_001
+  name:
+    type: string
+    description: Nombre completo del usuario
+    example: Juan Pérez
+  email:
+    type: string
+    format: email
+    description: Correo electrónico del usuario
+    example: juan.perez@example.com
+  phone:
+    type: string
+    description: Número de teléfono del usuario
+    example: +51987654321
+  walletAddress:
+    type: string
+    description: Dirección de la wallet del usuario (custodial o no-custodial)
+    example: 0x123abc456def789ghi
+  kycStatus:
+    type: string
+    enum:
+      - VERIFIED
+      - PENDING
+      - REJECTED
+    description: Estado de verificación KYC del usuario
+    example: VERIFIED
+required:
+  - userId
+  - name
+  - email
+  - walletAddress

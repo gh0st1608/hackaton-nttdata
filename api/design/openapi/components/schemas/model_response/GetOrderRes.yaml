@@ -1,0 +1,22 @@
+type: object
+description: Devuelve un item de producto
+properties:
+  Data:
+    type: object
+    properties:
+      Order:
+        type: object
+        properties:
+          status:
+            $ref: ../attributes/products/status.yaml
+          userId:
+            $ref: ../attributes/mongoId.yaml
+          boletaId:
+            $ref: ../attributes/mongoId.yaml
+          items:
+            $ref: ../attributes/orders/item.yaml
+          amount:
+            $ref: ../attributes/products/price.yaml
+
+
+          

@@ -1,0 +1,25 @@
+description: Entidad para crear una orden
+required: true
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/model_request/CreateOrder.yaml
+    examples:
+      Caso-Prueba-01:
+        summary: Caso Prueba 01
+        value:
+          Data:
+            Order:
+              status: true
+              userId: 8090a029-7e80-49cf-883e-bbf71b12f358
+              boletaId: 5a660b5a-8dfa-4213-b302-fec0830c718f
+              amount: 45.50
+              items:
+                - sku: OREO123
+                  name: Oreo Pack
+                  quantity: 2
+                  price: 10.00
+                - sku: COCA123
+                  name: Coca Cola
+                  quantity: 1
+                  price: 25.50
