@@ -23,12 +23,21 @@ Extrae los siguientes datos de la boleta que te adjunto como imagen en base64:
 - Número de boleta
 - Moneda
 
-Responde con un JSON estricto.
+Responde exclusivamente con un JSON válido y estricto.
+No añadas ningún texto adicional, ni explicaciones.
+Asegúrate de usar comillas dobles en claves y valores para cumplir con el formato JSON.
+Ejemplo:
+{
+  "RUC": "12345678901",
+  "Razón social": "Mi Empresa S.A.C.",
+  ...
+}
 `;
 
     const completion = await this.openai.chat.completions.create({
-      model: 'gpt-4-vision-preview',
+      model: 'gpt-4.1',
       messages: [
+        { role: 'system', content: 'Eres un asistente útil que describe imágenes.' },
         {
           role: 'user',
           content: [
@@ -42,10 +51,14 @@ Responde con un JSON estricto.
           ],
         },
       ],
-      max_tokens: 1000,
+      max_tokens: 500,
     });
-
+    console.log('completion.choices?.[0]?.message?.content',completion.choices?.[0]?.message?.content)
     const resultText = completion.choices?.[0]?.message?.content || '{}';
-    return JSON.parse(resultText);
+    const cleaned = resultText
+    .replace(/```json\s*([\s\S]*?)\s*```/i, '$1') // remueve ```json ``` si existe
+    .replace(/```([\s\S]*?)```/i, '$1') // remueve ``` ```
+    .trim();
+    return JSON.parse(cleaned);
   }
 }
