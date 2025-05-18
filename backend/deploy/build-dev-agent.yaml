@@ -17,7 +17,7 @@ steps:
       - '--runtime=nodejs20'
       - '--source=./backend/negocio/msa-agent/dist'
       - '--set-env-vars=NEAR_ACCOUNT_ID=,NEAR_PRIVATE_KEY=,NEAR_CONTRACT_ID='
-      - '--entry-point=authHandler'
+      - '--entry-point=agentsHandler'
 options:
   logging: CLOUD_LOGGING_ONLY
 serviceAccount: '1094025365695-compute@developer.gserviceaccount.com'
