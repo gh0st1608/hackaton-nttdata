@@ -2,21 +2,21 @@ steps:
 # Install dependencies and build
   - name: 'gcr.io/cloud-builders/npm'
     entrypoint: 'bash'
-    args: ['-c', 'cd backend/canal/msa-auth && npm install --quiet && npm run build:function']
+    args: ['-c', 'cd backend/negocio/msa-agent && npm install --quiet && npm run build:function']
 
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: 'gcloud'
     args:
       - 'functions'
       - 'deploy'
-      - 'authHackatonService'
+      - 'agentHackatonService'
       - '--region=us-central1'
       - '--memory=512MB'
       - '--allow-unauthenticated'
       - '--trigger-http'
       - '--runtime=nodejs20'
       - '--source=./backend/canal/msa-auth/dist'
-      - '--set-env-vars=MONGO_DB_URI=mongodb+srv://vady123:vady123!@proyectos.bihss.mongodb.net,TOKEN_TIMEOUT=3600,TOKEN_SECRET_WORD=Santiago123!'
+      - '--set-env-vars=NEAR_ACCOUNT_ID=,NEAR_PRIVATE_KEY=,NEAR_CONTRACT_ID='
       - '--entry-point=authHandler'
 options:
   logging: CLOUD_LOGGING_ONLY

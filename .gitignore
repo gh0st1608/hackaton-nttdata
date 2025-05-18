@@ -18,6 +18,7 @@ backend/negocio/msa-agent/dist
 backend/canal/msa-validate/dist
 backend/canal/msa-auth/dist
 
+backend/negocio/msa-agent/credentials.json
 #------------------
 infra/.terraform
 infra/.terraform.lock.hcl

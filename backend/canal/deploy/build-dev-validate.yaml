@@ -9,7 +9,7 @@ steps:
     args:
       - 'functions'
       - 'deploy'
-      - 'authService'
+      - 'validateHackatonService'
       - '--region=us-central1'
       - '--memory=512MB'
       - '--allow-unauthenticated'
