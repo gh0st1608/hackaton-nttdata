@@ -15,7 +15,7 @@ steps:
       - '--allow-unauthenticated'
       - '--trigger-http'
       - '--runtime=nodejs20'
-      - '--source=./backend/canal/msa-agent/dist'
+      - '--source=./backend/negocio/msa-agent/dist'
       - '--set-env-vars=NEAR_ACCOUNT_ID=,NEAR_PRIVATE_KEY=,NEAR_CONTRACT_ID='
       - '--entry-point=authHandler'
 options:
